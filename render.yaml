@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: zmt-store
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: REDIS_URL
+        sync: false
+      - key: ADMIN_PASSWORD
+        value: admin taher123
+      - key: JWT_SECRET
+        generateValue: true
+      - key: PORT
+        value: "8000"
